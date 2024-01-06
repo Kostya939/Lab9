@@ -1,20 +1,17 @@
 package org.example;
 
-import java.util.Objects;
-
 public class Product {
-
     private int id;
-    private String name;
-    private double price;
+    private String title;
+    private int price;
     private String description;
 
     public Product() {
     }
 
-    public Product(int id, String name, double price, String description) {
+    public Product(int id, String title, int price, String description) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.price = price;
         this.description = description;
     }
@@ -27,19 +24,19 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -52,29 +49,12 @@ public class Product {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return id == product.id &&
-                price == product.price &&
-                Objects.equals(name, product.name) &&
-                Objects.equals(description, product.description);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, price, description);
-    }
-
-    @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
                 '}';
     }
 }
-
